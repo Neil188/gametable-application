@@ -3,7 +3,7 @@
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 //const dbURI = process.env.MONGO_URL; 
-const dbURI = require('./mongoconfig');
+const dbURI = process.env.MONGO_URL || require('./mongoconfig');
 
 var promise = mongoose.connect(dbURI, {
   useMongoClient: true,
